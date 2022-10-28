@@ -19,16 +19,32 @@ const ProductList = ({ getData }) => {
             <div>
                 <button type="submit" onClick={AllProduct} >Refresh data</button>
             </div>
-            {products.map((item, index) => {
-                return (
-                    <div key={index}>
-                        <h3> <span>{index + 1} . </span> <span>{item.name}</span> <span>{item.price}</span> <span>{item.offerPrice}</span>
-                            <button onClick={(e) => getData(item.id)} >Edit</button>
-                            <button onClick={(e) => deleteProductId(item.id)} >Delete</button></h3>
+            <table>
+                <tr>
+                    <th>sr.no</th>
+                    <th> Name</th>
+                    <th>Price</th>
+                    <th>Offer Price</th>
 
-                    </div>
-                )
-            })}
+                </tr>
+
+                {products.map((item, index) => {
+                    return (
+                        < >
+                            <tr key={index}>
+                                <td>{index + 1} .</td>
+                                <td>{item.name}</td>
+                                <td>{item.price}</td>
+                                <td>{item.offerPrice}</td>
+                                <td><button onClick={(e) => getData(item.id)} >Edit</button></td>
+                                <td><button onClick={(e) => deleteProductId(item.id)} >Delete</button></td>
+                            </tr>
+
+
+                        </>
+                    )
+                })}
+            </table>
         </div>
     )
 }
