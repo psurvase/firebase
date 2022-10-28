@@ -6,13 +6,13 @@ import { useAuth } from '../context/AuthContext'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const {currentUser}= useAuth()
+  const { currentUser } = useAuth()
   return (
-    <div style={{textAlign:"center"}} className={styles.container}>
-    
-    {!currentUser && <Login />}
-    {currentUser && <DashBoard />}
-    
+    <div className={styles.container}>
+
+      {!currentUser && <Login />}
+      {currentUser && <DashBoard />}
+
     </div>
   )
 }
